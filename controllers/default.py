@@ -62,7 +62,7 @@ def call():
 def aluno():
     form = SQLFORM(Aluno)
     if form.process().accepted:
-        session.flash = 'Novo Aluno cadastrado: %s' % form.vars.titulo
+        session.flash = 'Novo Aluno cadastrado: %s' % form.vars.nome
         redirect(URL('aluno'))
     elif form.errors:
         response.flash = 'Erros no formulário!'
@@ -76,8 +76,8 @@ def aluno():
 def empresa():
     form = SQLFORM(Empresa)
     if form.process().accepted:
-        session.flash = 'Nova empresa cadastrada: %s' % form.vars.titulo
-        redirect(URL('aluno'))
+        session.flash = 'Nova empresa cadastrada: %s' % form.vars.nome
+        redirect(URL('empresa'))
     elif form.errors:
         response.flash = 'Erros no formulário!'
     else:
@@ -90,11 +90,11 @@ def empresa():
 def estagio():
     form = SQLFORM(Estagio)
     if form.process().accepted:
-        session.flash = 'Novo estagio cadastrado: %s' % form.vars.titulo
-        redirect(URL('aluno'))
+        response.flash = 'Novo estagio cadastrado: %s' % form.vars.titulo
+        redirect(URL('estagio'))
     elif form.errors:
         response.flash = 'Erros no formulário!'
     else:
         if not response.flash:
-            response.flash = 'Preencha o formulário!'
+            response.flash = ''
     return dict(form=form)
