@@ -57,7 +57,7 @@ def call():
     """
     return service()
 
-# http://localhost:8000/sigedo/default/aluno
+# http://localhost:8000/Sigedo/default/aluno
 
 def aluno():
     form = SQLFORM(Aluno)
@@ -71,7 +71,7 @@ def aluno():
             response.flash = 'Preencha o formulário!'
     return dict(form=form)
     
-# http://localhost:8000/sigedo/default/empresa
+# http://localhost:8000/Sigedo/default/empresa
 
 def empresa():
     form = SQLFORM(Empresa)
@@ -85,7 +85,7 @@ def empresa():
             response.flash = 'Preencha o formulário!'
     return dict(form=form)
 
-# http://localhost:8000/sigedo/default/estagio
+# http://localhost:8000/Sigedo/default/estagio
 
 def estagio():
     form = SQLFORM(Estagio)

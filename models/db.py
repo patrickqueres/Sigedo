@@ -93,9 +93,10 @@ auth.settings.reset_password_requires_verification = True
 
 Aluno = db.define_table('aluno',
 	Field('nome', 'string', label='Nome'),
-	Field('matricula', 'integer', label='Matricula'),
+	Field('matricula', 'double', label='Matricula'),
 	Field('curso', 'string', label='Curso'),
 	Field('periodo', 'integer', label='Periodo'),
+	Field('telefone', 'double', label='Telefone'),
 	Field('email', 'string', label='E-mail'),
 	Field('documento', 'upload', label='Documentos')
 	)
@@ -112,7 +113,7 @@ Estagio = db.define_table('estagio',
     Field('empresa', 'reference empresa', label='Empresa'),
     Field('aluno', 'reference aluno', label='Aluno'),	
     Field('data_inicio', 'date', label='Data Inicio'),
-    Field('data_prevista', 'date', label='Data Prevista'),
-    Field('data_fim', 'date', label='Data Fim'),
+    Field('data_prevista', 'date', label='Data prevista fim'),
+    Field('data_fim', 'date', label='Data fim'),
     Field('es_situacao', 'string', label = 'Situação' )
     )

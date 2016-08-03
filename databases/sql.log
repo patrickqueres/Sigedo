@@ -96,3 +96,6 @@ success!
 success!
 success!
 success!
+timestamp: 2016-08-03T07:58:09.948104
+ALTER TABLE aluno ADD telefone DOUBLE;
+success!
