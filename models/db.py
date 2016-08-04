@@ -115,5 +115,6 @@ Estagio = db.define_table('estagio',
     Field('data_inicio', 'date', label='Data do Inicio'),
     Field('data_prevista', 'date', label='Data prevista fim'),
     Field('data_fim', 'date', label='Data fim'),
-    Field('es_situacao', 'string', label = 'Situação' )
+    Field('es_situacao', 'string', label = 'Situação' ),
+    Field('relatorio', 'upload', label='Relatório do estagio')
     )

@@ -99,3 +99,75 @@ success!
 timestamp: 2016-08-03T07:58:09.948104
 ALTER TABLE aluno ADD telefone DOUBLE;
 success!
+success!
+timestamp: 2016-08-03T16:31:17.227498
+ALTER TABLE estagio ADD es_aprovado CHAR(1);
+timestamp: 2016-08-03T16:31:17.280456
+ALTER TABLE estagio ADD es_cancelado CHAR(1);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-08-03T16:37:55.119168
+ALTER TABLE estagio ADD relatorio CHAR(512);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!

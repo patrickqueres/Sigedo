@@ -98,3 +98,25 @@ def estagio():
         if not response.flash:
             response.flash = ''
     return dict(form=form)
+    
+# http://localhost:8000/Sigedo/default/ver_aluno
+    
+def ver_aluno():
+    aluno = db(Aluno).select()
+    return dict(aluno=aluno)
+    
+# http://localhost:8000/Sigedo/default/editar_aluno/1
+# Passagem de argumentos
+    
+def editar_aluno():
+    form = SQLFORM(Aluno, request.args(0, cast=int), showid = False) 
+    #showid=False
+    if form.process().accepted:
+        session.flash = 'Aluno atualizado: %s' % form.vars.nome
+        redirect(URL('ver_aluno'))
+    elif form.errors:
+        response.flash = 'Erros no formulário!'
+    else:
+        if not response.flash:
+            response.flash = 'Preencha o formulário!'
+    return dict(form=form)
