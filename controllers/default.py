@@ -101,16 +101,22 @@ def estagio():
     
 # http://localhost:8000/Sigedo/default/ver_aluno
     
-def ver_aluno():
+'''def ver_aluno():
     aluno = db(Aluno).select()
-    return dict(aluno=aluno)
+    return dict(aluno=aluno)'''
+
+def ver_filmes():
+    if request.vars.filme:
+        filmes = db(Filmes.titulo == request.vars.filme).select()
+    else:
+        filmes = db(Filmes).select()
+    return dict(filmes=filmes)
     
 # http://localhost:8000/Sigedo/default/editar_aluno/1
 # Passagem de argumentos
     
 def editar_aluno():
     form = SQLFORM(Aluno, request.args(0, cast=int), showid = False) 
-    #showid=False
     if form.process().accepted:
         session.flash = 'Aluno atualizado: %s' % form.vars.nome
         redirect(URL('ver_aluno'))
@@ -120,3 +126,9 @@ def editar_aluno():
         if not response.flash:
             response.flash = 'Preencha o formulário!'
     return dict(form=form)
+
+
+def deletar_aluno():
+    db(Aluno.id==request.args(0, cast=int)).delete()
+    session.flash = 'Aluno excluido'
+    redirect(URL('ver_aluno'))
