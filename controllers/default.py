@@ -57,6 +57,8 @@ def call():
     """
     return service()
 
+# ADD
+
 # http://localhost:8000/Sigedo/default/aluno
 
 def aluno():
@@ -98,20 +100,31 @@ def estagio():
         if not response.flash:
             response.flash = ''
     return dict(form=form)
+
+# READ
     
 # http://localhost:8000/Sigedo/default/ver_aluno
     
 '''def ver_aluno():
     aluno = db(Aluno).select()
+    return dict(aluno=aluno)
+----------------------------------------------
+ver_aluno?aluno=Edilson
+
+def ver_aluno():
+    if request.vars.aluno:
+         aluno = db(Aluno.titulo.like('%'+request.vars.aluno+'%')).select()
+    else:
+        aluno = db(Aluno).select()
     return dict(aluno=aluno)'''
 
-def ver_filmes():
-    if request.vars.filme:
-        filmes = db(Filmes.titulo == request.vars.filme).select()
-    else:
-        filmes = db(Filmes).select()
-    return dict(filmes=filmes)
-    
+# http://localhost:8000/Sigedo/default/ver_aluno?keywords=
+
+def ver_aluno():
+    grid = SQLFORM.grid(Aluno)
+    return dict(grid=grid)
+
+
 # http://localhost:8000/Sigedo/default/editar_aluno/1
 # Passagem de argumentos
     
