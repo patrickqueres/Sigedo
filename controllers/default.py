@@ -89,6 +89,8 @@ def empresa():
 
 # http://localhost:8000/Sigedo/default/estagio
 
+@auth.requires_login()
+@auth.requires_membership('funcionario')
 def estagio():
     form = SQLFORM(Estagio)
     if form.process().accepted:
@@ -120,6 +122,7 @@ def ver_aluno():
 
 # http://localhost:8000/Sigedo/default/ver_aluno?keywords=
 
+#@auth.requires_membership('funcionario')
 def ver_aluno():
     grid = SQLFORM.grid(Aluno)
     return dict(grid=grid)
@@ -127,7 +130,8 @@ def ver_aluno():
 
 # http://localhost:8000/Sigedo/default/editar_aluno/1
 # Passagem de argumentos
-    
+
+#@auth.requires_membership('funcionario')
 def editar_aluno():
     form = SQLFORM(Aluno, request.args(0, cast=int), showid = False) 
     if form.process().accepted:
@@ -136,12 +140,13 @@ def editar_aluno():
     elif form.errors:
         response.flash = 'Erros no formulário!'
     else:
-        if not response.flash:
-            response.flash = 'Preencha o formulário!'
+        response.flash = 'Preencha o formulário!'
     return dict(form=form)
 
-
+#@auth.requires_membership('funcionario')
 def deletar_aluno():
     db(Aluno.id==request.args(0, cast=int)).delete()
     session.flash = 'Aluno excluido'
     redirect(URL('ver_aluno'))
+
+

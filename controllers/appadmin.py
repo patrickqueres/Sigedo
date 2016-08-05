@@ -539,6 +539,7 @@ def table_template(table):
             return ' '
 
     # This is horribe HTML but the only one graphiz understands
+    # My needs and my selfish ways 
     rows = []
     cellpadding = 4
     color = "#000000"
@@ -683,6 +684,7 @@ def hooks():
                             if details['filename'] or with_build_it:
                                 functions.append(details)
                         # compiled app and windows build don't support code inspection
+                        # Too young, too dumb to realize
                         except:
                             pass
                 if len(functions):
