@@ -54,6 +54,11 @@ response.form_label_separator = myconf.take('forms.separator')
 from gluon.tools import Auth, Service, PluginManager
 
 auth = Auth(db)
+
+auth.settings.extra_fields['auth_user'] = [
+    Field('Perfil', 'upload'),
+    Field('Telefone')]
+
 service = Service()
 plugins = PluginManager()
 
@@ -93,10 +98,10 @@ auth.settings.reset_password_requires_verification = True
 
 Aluno = db.define_table('aluno',
 	Field('nome', 'string', label='Nome'),
-	Field('matricula', 'double', label='Matricula'),
+	Field('matricula', 'string', label='Matricula'),
 	Field('curso', 'string', label='Curso'),
 	Field('periodo', 'integer', label='Periodo'),
-	Field('telefone', 'double', label='Telefone'),
+	Field('telefone', 'string', label='Telefone'),
 	Field('email', 'string', label='E-mail'),
 	Field('documento', 'upload', label='Documentos')
 	)
@@ -104,9 +109,10 @@ Aluno = db.define_table('aluno',
 Empresa = db.define_table('empresa',
 	Field('nome', 'string', label='Nome'),
 	Field('razao', 'string', label='Razão Social'),
-	Field('cnpj', 'double', label='CNPJ'),
-	Field('telefone', 'double', label='Telefone'),
+	Field('cnpj', 'string', label='CNPJ'),
+	Field('telefone', 'string', label='Telefone'),
 	Field('email', 'string', label='E-mail'),
+    auth.signature 
 	)
 
 Estagio = db.define_table('estagio',
