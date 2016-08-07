@@ -89,8 +89,8 @@ def empresa():
 
 # http://localhost:8000/Sigedo/default/estagio
 
-@auth.requires_login()
-@auth.requires_membership('funcionario')
+# @auth.requires_login()
+# @auth.requires_membership('funcionario')
 def estagio():
     form = SQLFORM(Estagio)
     if form.process().accepted:
