@@ -1,52 +1,139 @@
-{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
-{{extend 'layout.html'}}
-
-{{block header}}
-    <header class="container-fluid background">
-      <div class="jumbotron text-center">
-        {{if response.title:}}
-        <h1>{{=response.title}}
-          <small>{{=response.subtitle or ''}}</small></h1>
-        {{pass}}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>Sigedo</title>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/Sigedo/static/css/materialize.css" type="text/css" rel="stylesheet"
+      media="screen,projection">
+    <link href="/Sigedo/static/css/style.css" type="text/css" rel="stylesheet"
+      media="screen,projection">
+  </head>
+  <body>
+    <nav class="white" role="navigation">
+      <div class="nav-wrapper container"> <a id="logo-container" href="#" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">Navbar Link</a></li>
+        </ul>
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="#">Navbar Link</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       </div>
-    </header>
-{{end}}
-
-{{if 'message' in globals():}}
-<h2>{{=message}}</h2>
-<p class="lead">{{=T('How did you get here?')}}</p>
-<ol>
-  <li>{{=T('You are successfully running web2py')}}</li>
-  <li>{{=XML(T('You visited the url %s', A(request.env.path_info,_href=request.env.path_info)))}}</li>
-  <li>{{=XML(T('Which called the function %s located in the file %s',
-    (A(request.function+'()',_href='#'),
-    A('web2py/applications/%(application)s/controllers/%(controller)s.py' % request,
-    _href=URL('admin','default','peek', args=(request.application,'controllers',request.controller+'.py'))))))}}</li>
-  <li>{{=XML(T('The output of the file is a dictionary that was rendered by the view %s',
-    A('web2py/applications/%(application)s/views/%(controller)s/index.html' % request,
-    _href=URL('admin','default','peek',args=(request.application,'views',request.controller,'index.html')))))}}</li>
-  <li>{{=T('You can modify this application and adapt it to your needs')}}</li>
-</ol>
-{{elif 'content' in globals():}}
-{{=content}}
-{{else:}}
-{{=BEAUTIFY(response._vars)}}
-{{pass}}
-
-{{block right_sidebar}}
-<div class="panel panel-info">
-  <div class="panel-heading"><h3 class="panel-title"><a class="btn-block"
-      href="{{=URL('admin','default','index')}}">
-      <i class="glyphicon glyphicon-cog"></i>
-      {{=T("admin")}}
-    </a></h3></div>
-  <div class="panel-body">
-    {{=T("Don't know what to do?")}}
-  </div>
-  <ul class="list-group">
-    <li class="list-group-item">{{=A(T("Online examples"), _href=URL('examples','default','index'))}}</li>
-    <li class="list-group-item"><a href="http://web2py.com">web2py.com</a></li>
-    <li class="list-group-item"><a href="http://web2py.com/book">{{=T('Documentation')}}</a></li>
-  </ul>
-</div>
-{{end}}
+    </nav>
+    <div id="index-banner" class="parallax-container">
+      <div class="section no-pad-bot">
+        <div class="container"> <br>
+          <br>
+          <h1 class="header center teal-text text-lighten-2">SIGEDO</h1>
+          <div class="row center">
+            <h5 class="header col s12 light">Sistema de Gestão de Estágios e Divulgação de Oportunidades</h5>
+          </div>
+          <div class="row center"> <a href=""
+              id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Comece agora</a> </div>
+          <br>
+          <br>
+        </div>
+      </div>
+      <div class="parallax"><img alt="My Logo" src="/Sigedo/static/images/background1.jpg"></div>
+    </div>
+    <div class="container">
+      <div class="section">
+        <!--   Icon Section   -->
+        <div class="row">
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+              <h5 class="center">Ferramentas rápidas</h5>
+              <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec sapien nulla. Vestibulum sodales nulla sem. Cras non suscipit nisi, nec tincidunt ante. Nulla auctor metus ac massa dictum, vitae laoreet velit viverra. Nunc vestibulum a lectus nec tincidunt. Cras non ligula sed ligula accumsan sollicitudin a id quam.</p>
+            </div>
+          </div>
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+              <h5 class="center">Gestão dos usuários</h5>
+              <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec sapien nulla. Vestibulum sodales nulla sem. Cras non suscipit nisi, nec tincidunt ante. Nulla auctor metus ac massa dictum, vitae laoreet velit viverra. Nunc vestibulum a lectus nec tincidunt. Cras non ligula sed ligula accumsan sollicitudin a id quam</p>
+            </div>
+          </div>
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+              <h5 class="center">Facil de trabalhar</h5>
+              <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec sapien nulla. Vestibulum sodales nulla sem. Cras non suscipit nisi, nec tincidunt ante. Nulla auctor metus ac massa dictum, vitae laoreet velit viverra. Nunc vestibulum a lectus nec tincidunt. Cras non ligula sed ligula accumsan sollicitudin a id quam.</p>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h4 style="text-align: center;">Um site moderno para controle dos seus
+          alunos</h4>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+    </div>
+    <div class="container">
+      <div class="section">
+        <div class="row">
+          <div class="col s12 center">
+            <p class="left-align light">Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam
+              pellentesque tristique arcu, non consequat magna fermentum ac.
+              Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien
+              id, viverra ultrices eros. Morbi sem neque, posuere et pretium
+              eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin
+              diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie.
+              Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat.
+              Nullam eget dignissim mauris, non tristique erat. Vestibulum ante
+              ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+              Curae;</p>
+            <p class="left-align light"><br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="page-footer teal">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Computiva</h5>
+            <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec sapien nulla. Vestibulum sodales nulla sem. Cras non suscipit nisi, nec tincidunt ante. Nulla auctor metus ac massa dictum, vitae laoreet velit viverra. Nunc vestibulum a lectus nec tincidunt. Cras non ligula sed ligula accumsan sollicitudin a id quam</p>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Configurações</h5>
+            <ul>
+              <li><a class="white-text" href="#%21">Link 1</a></li>
+              <li><a class="white-text" href="#%21">Link 2</a></li>
+              <li><a class="white-text" href="#%21">Link 3</a></li>
+              <li><a class="white-text" href="#%21">Link 4</a></li>
+            </ul>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Conecte</h5>
+            <ul>
+              <li><a class="white-text" href="#%21">Link 1</a></li>
+              <li><a class="white-text" href="#%21">Link 2</a></li>
+              <li><a class="white-text" href="#%21">Link 3</a></li>
+              <li><a class="white-text" href="#%21">Link 4</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container"> Made by Alzemand
+        </div>
+      </div>
+    </footer>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="/Sigedo/static/js/materialize.js"></script>
+    <script src="/Sigedo/static/js/init.js"></script>
+  </body>
+</html>
