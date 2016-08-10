@@ -1,16 +1,52 @@
 {{extend 'layout.html'}}
 
-<h1>Aluno</h1>
+<h2>Aluno</h2>
+<body>
+<div class="container">
+<div class="row">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
 
+    </form>
+  </div>
+ </div>
+</body>
 {{=form.custom.begin}}
-
-
-{{SELECT(OPTGROUP('=form.custom.widget.nome'))}}
-
-<select>
-  <option value="a">a</option>
-  <optgroup>
-    <option value="b">b</option>
-    <option value="c">c</option>
-  </optgroup>
-</select>
+    Name: <div>{{=form.custom.widget.nome}}</div>
+    File: <div>{{=form.custom.widget.curso}}</div>
+    {{=form.custom.submit}}
+{{=form.custom.end}}
