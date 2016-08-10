@@ -6,7 +6,7 @@
 #########################################################################
 
 response.logo = A(B('web',SPAN(2),'py'),XML('&trade;&nbsp;'),
-                  _class="navbar-brand",_href="http://www.web2py.com/",
+                  _class="brand-logo",_href="http://www.web2py.com/",
                   _id="web2py-logo")
 response.title = request.application.replace('_',' ').title()
 response.subtitle = ''
@@ -40,8 +40,7 @@ def _():
     ctr = request.controller
     # useful links to internal and external resources
     response.menu += [
-        (T('My Sites'), False, URL('admin', 'default', 'site')),
-          (T('This App'), False, '#', [
+          (T('Admin'), False, '#', [
               (T('Design'), False, URL('admin', 'default', 'design/%s' % app)),
               LI(_class="divider"),
               (T('Controller'), False,
@@ -135,4 +134,4 @@ def _():
         ]
 if DEVELOPMENT_MENU: _()
 
-if "auth" in locals(): auth.wikimenu() 
+if "auth" in locals(): auth.wikimenu()

@@ -1,5 +1,16 @@
 {{extend 'layout.html'}}
 
-<h1>Ver Aluno</h1>
+<h1>Aluno</h1>
 
-{{=form}}
+{{=form.custom.begin}}
+
+
+{{SELECT(OPTGROUP('=form.custom.widget.nome'))}}
+
+<select>
+  <option value="a">a</option>
+  <optgroup>
+    <option value="b">b</option>
+    <option value="c">c</option>
+  </optgroup>
+</select>

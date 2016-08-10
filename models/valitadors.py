@@ -7,7 +7,7 @@ Aluno.nome.requires = [IS_NOT_EMPTY(),
 IS_NOT_IN_DB(db, 'aluno.nome')]
 Aluno.matricula.requires = [IS_NOT_EMPTY(),
 IS_NOT_IN_DB(db, 'aluno.matricula')]
-Aluno.curso.requires = requires=IS_IN_SET(['Administração', 'Engenharia de Produção', 'Sistemas de Informação', 'Matemática'])
+Aluno.curso.requires = IS_IN_SET(['Administração', 'Engenharia de Produção', 'Sistemas de Informação', 'Matemática'])
 Aluno.periodo.requires = IS_NOT_EMPTY()
 #= IS_EMPTY_OR(IS_IMAGE())
 

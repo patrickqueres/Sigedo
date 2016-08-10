@@ -149,4 +149,3 @@ def deletar_aluno():
     session.flash = 'Aluno excluido'
     redirect(URL('ver_aluno'))
 
-

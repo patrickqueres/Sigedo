@@ -980,7 +980,7 @@
 }
 
 .teal {
-  background-color: #009688 !important;
+  background-color: #034ea2 !important;
 }
 
 .teal-text {
@@ -1016,11 +1016,11 @@
 }
 
 .teal-text.text-lighten-2 {
-  color: #4db6ac !important;
+  color: #fff !important;
 }
 
 .teal.lighten-1 {
-  background-color: #26a69a !important;
+  background-color: #034ea2 !important;
 }
 
 .teal-text.text-lighten-1 {
@@ -1880,7 +1880,7 @@
 }
 
 .brown-text {
-  color: #795548 !important;
+  color: #034ea2 !important;
 }
 
 .brown.lighten-5 {
