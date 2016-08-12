@@ -7,6 +7,11 @@ import MySQLdb
 
 # Conectar ao banco de dados
 
+# SQLITE
+
+conn = sqlite3.connect('clientes.db')
+
+# MY SQL
 con = MySQLdb.connect ( host = "localhost",
                         user = "root",
                         passwd = "*****",

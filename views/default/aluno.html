@@ -1,52 +1,78 @@
-{{extend 'layout.html'}}
+{{extend 'layout-material.html'}}
+
+{{=form.custom.begin}}
+
 
 <h2>Aluno</h2>
-<body>
+<body class="grey lighten-3">
+
 <div class="container">
+<div class="container">
+<div class="card-panel hoverable"> 
+<br>
 <div class="row">
+	<div class="container">
+		<div style="text-align: center;"><img class="responsive-img" src="/Sigedo/static/images/add_aluno.svg" height="100px" width="100px"><br>
+            <br>
+         </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Password</label>
+          <label class="formContatoNome" for="nome">Nome</label>
+          {{=form.custom.widget.nome}}
         </div>
       </div>
-      <div class="row">
+     <div class="row">
         <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Password</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Password</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
+          <label class="formContatoMatricula" for="matricula">Matricula</label>
+          {{=form.custom.widget.matricula}}
         </div>
       </div>
 
-    </form>
+  
+      <div class="row">
+        <div class="input-field col s12">
+          <label class="formContatoPeriodo" for="periodo">Periodo</label>
+          {{=form.custom.widget.periodo}}
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="input-field col s12">
+          <label class="formContatoTelefone" for="telefone">Telefone</label>
+          {{=form.custom.widget.telefone}}
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="input-field col s12">
+          <label class="formContatoEmail" for="email">E-Mail</label>
+          {{=form.custom.widget.email}}
+        </div>
+      </div>
+      	  <label class="formContatoCurso" for="curso">Curso</label>
+	  	  {{=form.custom.widget.curso}}<br>
+      <label class="formContatoDocumento" for="Documento">Curriculo Lattes</label><br>
+      	{{=form.custom.widget.documento}}
+      	<br>
   </div>
  </div>
+ </div>
+ 	<br>
+<div class="right">
+   <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+    <i class="material-icons right">send</i>
+  </button>
+</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <br>
+ <br>
+ <br>
+ <br>
 </body>
-{{=form.custom.begin}}
-    Name: <div>{{=form.custom.widget.nome}}</div>
-    File: <div>{{=form.custom.widget.curso}}</div>
-    {{=form.custom.submit}}
+
+
+    
 {{=form.custom.end}}

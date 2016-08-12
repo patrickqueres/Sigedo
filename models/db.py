@@ -94,7 +94,8 @@ auth.settings.reset_password_requires_verification = True
 Aluno = db.define_table('aluno',
 	Field('nome', 'string', label='Nome'),
 	Field('matricula', 'string', label='Matricula'),
-	Field('curso', 'string', label='Curso'),
+	Field('curso', 'string', widget = lambda field, value:
+    SQLFORM.widgets.options.widget(field, value, _class='browser-default')),
 	Field('periodo', 'integer', label='Periodo'),
 	Field('telefone', 'string', label='Telefone'),
 	Field('email', 'string', label='E-mail'),
@@ -111,11 +112,14 @@ Empresa = db.define_table('empresa',
 	)
 
 Estagio = db.define_table('estagio',
-    Field('empresa', 'reference empresa', label='Empresa'),
-    Field('aluno', 'reference aluno', label='Aluno'),	
+    Field('empresa', 'reference empresa', widget = lambda field, value:
+    SQLFORM.widgets.options.widget(field, value, _class='browser-default')),
+    Field('aluno', 'reference aluno', widget = lambda field, value:
+    SQLFORM.widgets.options.widget(field, value, _class='browser-default')),	
     Field('data_inicio', 'date', label='Data do Inicio'),
     Field('data_prevista', 'date', label='Data prevista fim'),
     Field('data_fim', 'date', label='Data fim'),
-    Field('es_situacao', 'string', label = 'Situação' ),
+    Field('es_situacao', 'string', widget = lambda field, value:
+    SQLFORM.widgets.options.widget(field, value, _class='browser-default')),
     Field('relatorio', 'upload', label='Relatório do estagio')
     )
