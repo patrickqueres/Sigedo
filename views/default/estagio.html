@@ -1,5 +1,71 @@
-{{extend 'layout.html'}}
+{{extend 'layout-material.html'}}
 
-<h1>Estagio</h1>
+{{=form.custom.begin}}
 
-{{=form}}
+
+<h2>Estágio</h2>
+<body class="grey lighten-3">
+
+<div class="container">
+<div class="container">
+<div class="card-panel hoverable"> 
+<br>
+<div class="row">
+	<div class="container">
+		<div style="text-align: center;"><img class="responsive-img" src="/Sigedo/static/images/estagio.svg" height="100px" width="100px"><br>
+            <br>
+         </div>
+       <label class="formContatoEmpresa" for="empresa">Empresa</label><br>
+      	{{=form.custom.widget.empresa}}
+      	<br>
+      	<label class="formContatoAluno" for="aluno">Aluno</label><br>
+      	{{=form.custom.widget.aluno}}
+      	<br>
+      	
+<!--     <div class="row">-->
+<!--        <div class="input-field col s12">-->
+          <label class="formContatoData_Inicio" for="data_inicio">Data de inicio do Estágio</label>
+          {{=form.custom.widget.data_inicio}}<br>
+<!--        </div>-->
+<!--      </div>-->
+
+<!--     <div class="row">-->
+<!--        <div class="input-field col s12">-->
+          <label class="formContatoData_prevista" for="data_prevista">Data prevista de fim do Estágio</label>
+          {{=form.custom.widget.data_prevista}}<br>
+<!--        </div>-->
+<!--      </div>-->
+      
+<!--     <div class="row">-->
+<!--        <div class="input-field col s12">-->
+          <label class="formContatoData_Inicio" for="data_inicio">Data do fim do Estágio</label>
+          {{=form.custom.widget.data_fim}}<br>
+<!--        </div>-->
+<!--      </div>-->
+      
+       <label class="formContatoEs_situacao" for="es_situacao">Situação</label><br>
+      	{{=form.custom.widget.es_situacao}}
+      	<br>
+
+  </div>
+ </div>
+ </div>
+ 	<br>
+<div class="right">
+   <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+    <i class="material-icons right">send</i>
+  </button>
+</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <br>
+ <br>
+ <br>
+ <br>
+</body>
+
+
+    
+{{=form.custom.end}}

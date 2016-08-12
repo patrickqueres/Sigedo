@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="empresa.svg">
+   sodipodi:docname="ic_school_black_48px.svg">
   <metadata
      id="metadata12">
     <rdf:RDF>
@@ -42,18 +42,18 @@
      id="namedview8"
      showgrid="false"
      inkscape:zoom="4.9166667"
-     inkscape:cx="24"
+     inkscape:cx="-11.288136"
      inkscape:cy="24"
      inkscape:window-x="65"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <path
-     d="M15 11V5l-3-3-3 3v2H3v14h18V11h-6zm-8 8H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm6 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm6 12h-2v-2h2v2zm0-4h-2v-2h2v2z"
-     id="path4"
-     style="fill:#034ea2;fill-opacity:1" />
-  <path
      d="M0 0h24v24H0z"
      fill="none"
-     id="path6" />
+     id="path4" />
+  <path
+     d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"
+     id="path6"
+     style="fill:#034ea2;fill-opacity:1" />
 </svg>
